@@ -1017,4 +1017,45 @@
   <data name="_Admin.ZipCode" xml:space="preserve">
     <value>邮编</value>
   </data>
+  <data name="DeleteFile" xml:space="preserve">
+    <value>删除文件</value>
+  </data>
+  <data name="DownloadFile" xml:space="preserve">
+    <value>下载文件</value>
+  </data>
+  <data name="GetActionsByModelId" xml:space="preserve">
+    <value>按模型ID获取操作</value>
+  </data>
+  <data name="GetFile" xml:space="preserve">
+    <value>获取文件</value>
+  </data>
+  <data name="GetFileName" xml:space="preserve">
+    <value>获取文件名称</value>
+  </data>
+  <data name="GetFolders" xml:space="preserve">
+    <value>获取文件夹</value>
+  </data>
+  <data name="GetGroups" xml:space="preserve">
+    <value>获取组</value>
+  </data>
+  <data name="GetGroupsTree" xml:space="preserve">
+    <value>获取数组</value>
+  </data>
+  <data name="GetPageActions" xml:space="preserve">
+    <value>获取页面操作</value>
+  </data>
+  <data name="GetRoles" xml:space="preserve">
+    <value>获取角色</value>
+  </data>
+  <data name="GetTenants" xml:space="preserve">
+    <value>获取租户</value>
+  </data>
+  <data name="GetUserPhoto" xml:space="preserve">
+    <value>获取用户照片</value>
+  </data>
+  <data name="UploadFile" xml:space="preserve">
+    <value>上传文件</value>
+  </data>
+  <data name="UploadPic" xml:space="preserve">
+    <value>上传照片</value>
 </root>
