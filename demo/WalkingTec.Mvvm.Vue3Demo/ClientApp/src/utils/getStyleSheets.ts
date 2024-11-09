@@ -40,29 +40,33 @@ const getElementPlusIconfont = () => {
 
 // 初始化获取 css 样式，这里使用 fontawesome 的图标
 const getAwesomeIconfont = () => {
-	return new Promise((resolve, reject) => {
-		nextTick(() => {
-			const styles: any = document.styleSheets;
-			let sheetsIconList = [];
+    return new Promise((resolve, reject) => {
+        nextTick(() => {
+            const styles: any = document.styleSheets;
+            let sheetsIconList = [];
             for (let i = 0; i < styles.length; i++) {
                 for (let j = 0; j < styles[i].cssRules.length; j++) {
-					if (
-                        styles[i].cssRules[j].selectorText &&
-                        styles[i].cssRules[j].selectorText.indexOf('.fa-') === 0 &&
-                        styles[i].cssRules[j].selectorText.indexOf(',') === -1
-					) {
-                        if (/::before/.test(styles[i].cssRules[j].selectorText)) {
-							sheetsIconList.push(
-                                `${styles[i].cssRules[j].selectorText.substring(1, styles[i].cssRules[j].selectorText.length).replace(/\:\:before/gi, '')}`
-							);
-						}
-					}
-				}
-			}
-			if (sheetsIconList.length > 0) resolve(sheetsIconList.reverse());
-			else reject('未获取到值，请刷新重试');
-		});
-	});
+                    let selectorText = styles[i].cssRules[j].selectorText
+                    if (
+                        selectorText &&
+                        selectorText.includes('.fa-')
+                    ) {
+                        let newSelectorTextList: [string] = selectorText.split(", ")
+                        for (let k = 0; k < newSelectorTextList.length; k++) {
+                            const element = newSelectorTextList[k];
+                            if (/::before/.test(element)) {
+                                sheetsIconList.push(
+                                    `${element.substring(1, element.length).replace(/\:\:before/gi, '')}`
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+            if (sheetsIconList.length > 0) resolve(sheetsIconList.reverse());
+            else reject('未获取到值，请刷新重试');
+        });
+    });
 };
 
 /**
